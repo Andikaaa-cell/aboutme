@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Andika Indra Praja</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --accent-color: #e74c3c;
+            --background-color: #ecf0f1;
+            --text-color: #34495e;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--background-color) 0%, var(--primary-color) 100%);
+            color: var(--text-color);
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        header {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            margin: 0;
+            padding: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 80%);
+            transform: rotate(30deg);
+            z-index: 1;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .profile-pic {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 0 30px rgba(52, 152, 219, 0.8);
+            transition: all 0.5s ease;
+            border-radius: 50%;
+            animation: glow 3s ease-in-out infinite alternate, rotate 20s linear infinite;
+        }
+        
+        @keyframes glow {
+            0% { box-shadow: 0 0 30px rgba(52, 152, 219, 0.8); }
+            100% { box-shadow: 0 0 50px rgba(52, 152, 219, 1), 0 0 70px rgba(46, 204, 113, 0.6); }
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .profile-pic:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+        
+        
+
+        .profile-pic:hover {
+            transform: translateY(-10px) rotate(5deg);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+
+        
+        .intro {
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .info-section {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            margin-top: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(46, 204, 113, 0.2) 0%, rgba(46, 204, 113, 0) 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+
+        .info-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+
+        .info-item {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .info-item::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 1.5em;
+        }
+
+        .info-item h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .info-item p {
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .skill-tag {
+            background: var(--secondary-color);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--accent-color);
+            transform: scale(1.05);
+        }
+
+        .quote {
+            font-style: italic;
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 1.2em;
+            color: var(--text-color);
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        #starfield {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }        
+        
+        .social-links a {
+            color: var(--primary-color);
+            font-size: 2em;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Me</h1>
+    </header>
+
+    <div class="container">
+        <div class="profile-section">
+            <img src="image.jpg" alt="Profile Picture" class="profile-pic floating" id="profile-pic">
+            <div class="intro">
+                <h2>Andika Indra Praja</h2>
+                <p>A student from SMA Negeri 2 Cikarang Selatan, who likes to learn new things and wants to become a software engineer.</p>
+            </div>
+        </div>
+        <canvas id="starfield"></canvas>
+        <div class="info-section">
+            <h2>About me</h2>
+            <div class="info-item">
+                <h3>Birthday</h3>
+                <p>20 March 2008</p>
+            </div>
+            <div class="info-item">
+                <h3>MBTI</h3>
+                <p>ESFJ/ENFJ</p>
+            </div>
+            <div class="info-item">
+                <h3>Hobby</h3>
+                <p>Reading novel, comic, and photograph.</p>
+            </div>
+            <div class="info-item">
+                <h3>Fav Video games</h3>
+                <p>Suikoden, God Of War, GTA, Minecraft.</p>
+            </div>
+            <div class="info-item">
+                <h3>Fav Film</h3>
+                <p>Inside Out, Spiderman, The Lord of the Rings trilogy, and Studio Ghibli films.</p>
+            </div>
+            <div class="info-item">
+                <h3>Fav Music</h3>
+                <p>HIVI, Bruno Mars, Bruno Major, CAS, SZA, Wave To Earth.</p>
+            </div>
+            <div class="info-item">
+                <h3>Life Motto</h3>
+                <p>"Sukses bukanlah tujuan, tapi perjalanan."</p>
+            </div>
+        </div>
+
+        <div class="skills">
+            <span class="skill-tag">Ambivert</span>
+            <span class="skill-tag">Problem Solving</span>
+            <span class="skill-tag">Communicate</span>
+            <span class="skill-tag">Easy Going</span>
+            <span class="skill-tag">Team Work</span>
+        </div>
+
+        <div class="quote">
+            "Berfikirlah yang terburuk dan menerima kenyataan, maka tidak akan ada lagi perasaan kecewa."
+        </div>
+
+    </div>
+    <footer>
+            <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Auto-play background music
+                var audio = new Audio('wave to earth - seasons.mp3');
+                audio.loop = true;
+                
+                // Add music controls
+                var musicControls = document.createElement('div');
+                musicControls.innerHTML = `
+                    <button id="playPauseBtn">Pause Music</button>
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.5">
+                `;
+                musicControls.style.position = 'fixed';
+                musicControls.style.top = '10px';
+                musicControls.style.right = '10px';
+                document.body.appendChild(musicControls);
+        
+                var playPauseBtn = document.getElementById('playPauseBtn');
+                var volumeSlider = document.getElementById('volumeSlider');
+        
+                playPauseBtn.addEventListener('click', function() {
+                    if (audio.paused) {
+                        audio.play();
+                        playPauseBtn.textContent = 'Pause Music';
+                    } else {
+                        audio.pause();
+                        playPauseBtn.textContent = 'Play Music';
+                    }
+                });
+        
+                volumeSlider.addEventListener('input', function() {
+                    audio.volume = this.value;
+                });
+        
+                // Try to play audio (this might be blocked by browsers)
+                audio.play().catch(function(error) {
+                    console.log('Auto-play was prevented');
+                    playPauseBtn.textContent = 'Play Music';
+                });
+                });
+
+                document.addEventListener('DOMContentLoaded', function() {
+                    // ... existing code ...
+                
+                    // Starfield effect
+                    const canvas = document.getElementById('starfield');
+                    const ctx = canvas.getContext('2d');
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                
+                    const stars = [];
+                    const numStars = 200;
+                    const colors = ['#ffffff', '#fffafa', '#f0f8ff', '#f8f8ff', '#f0ffff'];
+                
+                    for (let i = 0; i < numStars; i++) {
+                        stars.push({
+                            x: Math.random() * canvas.width,
+                            y: Math.random() * canvas.height,
+                            radius: Math.random() * 2,
+                            color: colors[Math.floor(Math.random() * colors.length)],
+                            speed: Math.random() * 0.5 + 0.1,
+                            alpha: Math.random()
+                        });
+                    }
+                
+                    function drawStars() {
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        stars.forEach(star => {
+                            ctx.beginPath();
+                            ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                            ctx.fillStyle = star.color;
+                            ctx.globalAlpha = star.alpha;
+                            ctx.fill();
+                            star.y += star.speed;
+                            star.alpha += Math.random() * 0.1 - 0.05;
+                            if (star.alpha < 0) star.alpha = 0;
+                            if (star.alpha > 1) star.alpha = 1;
+                            if (star.y > canvas.height) {
+                                star.y = 0;
+                                star.x = Math.random() * canvas.width;
+                            }
+                        });
+                        requestAnimationFrame(drawStars);
+                    }
+                
+                    drawStars();
+                
+                    // Resize canvas when window is resized
+                    window.addEventListener('resize', function() {
+                        canvas.width = window.innerWidth;
+                        canvas.height = window.innerHeight;
+                    });
+                });
+                
+                document.addEventListener('DOMContentLoaded', function() {
+                    // ... existing code ...
+                
+                    // Starfield effect
+                    const canvas = document.getElementById('starfield');
+                    const ctx = canvas.getContext('2d');
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                
+                    const stars = [];
+                    const numStars = 200;
+                    const colors = ['#ffffff', '#fffafa', '#f0f8ff', '#f8f8ff', '#f0ffff'];
+                
+                    for (let i = 0; i < numStars; i++) {
+                        stars.push({
+                            x: Math.random() * canvas.width,
+                            y: Math.random() * canvas.height,
+                            radius: Math.random() * 2,
+                            color: colors[Math.floor(Math.random() * colors.length)],
+                            speed: Math.random() * 0.5 + 0.1,
+                            alpha: Math.random()
+                        });
+                    }
+                
+                    function drawStars() {
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        stars.forEach(star => {
+                            ctx.beginPath();
+                            ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                            ctx.fillStyle = star.color;
+                            ctx.globalAlpha = star.alpha;
+                            ctx.fill();
+                            star.y += star.speed;
+                            star.alpha += Math.random() * 0.1 - 0.05;
+                            if (star.alpha < 0) star.alpha = 0;
+                            if (star.alpha > 1) star.alpha = 1;
+                            if (star.y > canvas.height) {
+                                star.y = 0;
+                                star.x = Math.random() * canvas.width;
+                            }
+                        });
+                        requestAnimationFrame(drawStars);
+                    }
+                
+                    drawStars();
+                
+                    // Resize canvas when window is resized
+                    window.addEventListener('resize', function() {
+                        canvas.width = window.innerWidth;
+                        canvas.height = window.innerHeight;
+                    });
+                });
+                
+            </script>
+        </body>
+        </html>
+        
+</body>
+</html>
